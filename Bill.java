@@ -1,4 +1,4 @@
-/*author:Tendai K Nyevedzanai
+/*author:Tendai K Nyevedzanai.
  * a program that checks if the shop has the products and prints out the total of all present products in the shop
  */
 import java.io.*;
@@ -26,6 +26,21 @@ public class Bill{
                 scanner.close();
             }
         }
+
+        String[] clientItems=clientList.split(" ");
+        int total=0;
+        for(String item: clientItems){
+            for(String shopItem_Price: storeGroceryList ){
+                String[] shopSeparated=shopItem_Price.split(" : ");
+                String shopItem=shopSeparated[0];
+                int Item_Price=Integer.parseInt(shopSeparated[1]); 
+                if(item.equals(shopItem)){
+                    System.out.println(item+" : "+Item_Price);
+                    total=Item_Price+total;
+                }
+            }
+
+        }System.out.println("TOTAL : "+total);
         
     }
 }
