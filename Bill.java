@@ -31,7 +31,7 @@ public class Bill{
         int total=0;
         for(String item: clientItems){
             for(String shopItem_Price: storeGroceryList ){
-                String[] shopSeparated=shopItem_Price.split(" : ");
+                String[] shopSeparated=shopItem_Price.split(" ");
                 String shopItem=shopSeparated[0];
                 int Item_Price=Integer.parseInt(shopSeparated[1]); 
                 if(item.equals(shopItem)){
